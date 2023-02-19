@@ -1,3 +1,10 @@
+/**
+ * Title: app.component.ts
+ * Author: Walter McCue
+ * Date: 02/26/23
+ * Description: ts for the loan-app project
+*/
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +13,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'loan-app';
+
+  title: string;
+
+  constructor() {
+
+    this.title = "Welcome to the Loan App!";
+
+  }
+
 }

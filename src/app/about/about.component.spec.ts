@@ -1,3 +1,10 @@
+/**
+ * Title: about.component.spec.ts
+ * Author: Walter McCue
+ * Date: 02/26/23
+ * Description: ts for the loan-app project
+*/
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutComponent } from './about.component';

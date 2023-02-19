@@ -1,3 +1,10 @@
+/**
+ * Title: app.component.spec.ts
+ * Author: Walter McCue
+ * Date: 02/26/23
+ * Description: ts for the loan-app project
+*/
+
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
