@@ -5,4 +5,103 @@
   Description: html for the loan-app project
 -->
 
-<p>home works!</p>
+<div fxLayout fxLayoutGap="20px">
+
+    <!--User Input-->
+
+    <div fxLayout="column" fxLayoutAlign="center">
+
+      <mat-card class="black">
+
+        <form
+          fxLayout="column"
+          [formGroup]="loanForm"
+          (ngSubmit)=onSubmit
+        >
+
+          <!--Principle-->
+
+          <mat-form-field>
+
+            <mat-label>
+              Principle
+            </mat-label>
+
+            <input
+              type="text"
+              name="txtPrinciple"
+              id="txtPrinciple"
+              matInput
+              formControlName="principle"
+            />
+
+          </mat-form-field>
+
+          <!--Interest-->
+
+          <mat-form-field>
+
+            <mat-label>
+              Interest
+            </mat-label>
+
+            <input
+              type="text"
+              name="txtInterest"
+              id="txtInterest"
+              matInput
+              formControlName="interest"
+            />
+
+          </mat-form-field>
+
+          <!--Loan Length-->
+
+          <mat-form-field>
+
+            <mat-label>
+              Loan Length
+            </mat-label>
+
+            <input
+              type="text"
+              name="txtYears"
+              id="txtYears"
+              matInput
+              formControlName="years"
+            />
+
+          </mat-form-field>
+
+          <!--Calculate Button-->
+
+          <button
+            mat-raised-button
+            [disabled]="loanForm.invalid"
+          >
+            Calculate
+          </button>
+
+          <!--Clear Button-->
+
+          <button
+            mat-raised-button
+          >
+            Clear Form
+          </button>
+
+        </form>
+      -->
+      </mat-card>
+
+    </div>
+
+    <!--Results Card-->
+
+    <div fxLayout="column">
+
+      <app-results></app-results>
+
+    </div>
+
+</div>
