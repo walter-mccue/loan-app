@@ -25,6 +25,10 @@ body {
   color: #60605C;
 }
 
+button {
+  font-weight: 700;
+}
+
 button:hover {
   background-color:#60605C;
 }
@@ -32,11 +36,6 @@ button:hover {
 .main-container {
   margin: 10px 20px;
   padding: 10px;
-}
-
-.attribution-link {
-  text-decoration: none;
-  color: white;
 }
 
 mat-card-title {

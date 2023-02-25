@@ -5,21 +5,30 @@
   Description: html for the loan-app project
 -->
 
-<div fxLayout fxLayoutGap="20px">
+<div fxLayout fxLayoutGap="20px" fxLayoutAlign="center">
 
     <!--User Input-->
 
     <div fxLayout="column" fxLayoutAlign="center">
 
-      <mat-card class="black">
+      <mat-card>
 
         <form
           fxLayout="column"
           [formGroup]="loanForm"
-          (ngSubmit)=onSubmit
+          (ngSubmit)="onSubmit()"
         >
 
           <!--Principle-->
+
+          <div
+            class="msgError"
+            *ngIf="loanForm.controls['principle'].invalid &&
+            loanForm.controls['principle'].dirty &&
+            loanForm.controls['principle'].touched"
+          >
+            {{ errorMessage }}
+          </div>
 
           <mat-form-field>
 
@@ -31,6 +40,7 @@
               type="text"
               name="txtPrinciple"
               id="txtPrinciple"
+              placeholder="Ex: $4,903.99 as 4903.99"
               matInput
               formControlName="principle"
             />
@@ -38,6 +48,15 @@
           </mat-form-field>
 
           <!--Interest-->
+
+          <div
+            class="msgError"
+            *ngIf="loanForm.controls['interest'].invalid &&
+            loanForm.controls['interest'].dirty &&
+            loanForm.controls['interest'].touched"
+          >
+            {{ errorMessage }}
+          </div>
 
           <mat-form-field>
 
@@ -49,6 +68,7 @@
               type="text"
               name="txtInterest"
               id="txtInterest"
+              placeholder="Ex: 15.79% as 15.79"
               matInput
               formControlName="interest"
             />
@@ -56,6 +76,15 @@
           </mat-form-field>
 
           <!--Loan Length-->
+
+          <div
+            class="msgError"
+            *ngIf="loanForm.controls['years'].invalid &&
+            loanForm.controls['years'].dirty &&
+            loanForm.controls['years'].touched"
+          >
+            {{ errorYear }}
+          </div>
 
           <mat-form-field>
 
@@ -67,40 +96,54 @@
               type="text"
               name="txtYears"
               id="txtYears"
+              placeholder="Ex: 4 years as 4"
               matInput
               formControlName="years"
             />
 
           </mat-form-field>
 
-          <!--Calculate Button-->
+          <div fxLayout="row wrap">
 
-          <button
-            mat-raised-button
-            [disabled]="loanForm.invalid"
-          >
-            Calculate
-          </button>
+            <!--Reset Button-->
 
-          <!--Clear Button-->
+            <button
+              class="formButton"
+              mat-raised-button
+              type="reset"
+              (click)="onReset()"
+            >
+              Clear Form
+            </button>
 
-          <button
-            mat-raised-button
-          >
-            Clear Form
-          </button>
+            <!--Submit Button-->
+
+            <button
+              class="formButton"
+              mat-raised-button
+              type="submit"
+              [disabled]="loanForm.invalid"
+            >
+              Calculate
+            </button>
+
+          </div>
 
         </form>
-      -->
+
       </mat-card>
 
     </div>
 
     <!--Results Card-->
 
-    <div fxLayout="column">
+    <div fxLayout="column" id="results">
 
-      <app-results></app-results>
+      <app-results
+        [monthlyPayment]="monthlyPayment"
+        [totalInterest]="totalInterest"
+      >
+      </app-results>
 
     </div>
 

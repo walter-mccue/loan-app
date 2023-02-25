@@ -4,3 +4,46 @@ Author: Walter McCue
 Date: 02/26/23
 Description: styling for the loan-app project
 */
+
+mat-card {
+  background-color: #000;
+  padding: 20px;
+  min-height: 350px;
+}
+
+.formButton {
+  background-color: #ffdb00;
+  color: #000;
+  font-weight: 700;
+  width: 280px;
+  margin: 10px;
+}
+
+.formButton:hover {
+  background-color:#60605C;
+  cursor: pointer;
+}
+
+.formButton:disabled {
+  background-color:#FFF4B1;
+}
+
+mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+input {
+  background-color: transparent !important;
+}
+
+mat-form-field {
+  width: 600px;
+}
+
+.msgError {
+  margin:10px;
+  padding:10px;
+  color: #D8000C;
+  background-color: #FFD2D2;
+
+}

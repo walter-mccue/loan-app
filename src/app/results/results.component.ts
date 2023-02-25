@@ -5,13 +5,20 @@
  * Description: ts for the loan-app project
 */
 
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss']
 })
-export class ResultsComponent {
+export class ResultsComponent implements OnInit {
+
+  @Input() monthlyPayment!: number;
+  @Input() totalInterest!: number;
+
+  ngOnInit(): void {
+
+  }
 
 }
